@@ -58,13 +58,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onReceive(Context context, Intent intent) {
             long extra = intent.getIntExtra("positionvalue", -1);
-            Log.d(TAG, "extra = " + extra);
+            Log.d(TAG, "extra = " + extra);//
             if (extra < 100){
                 if (null != mPlayThread)
                     mPlayThread.setChannel(true, false);
                 mBalance.setProgress(mBalance.getMax());
             }
-
             if (extra > 200){
                 if (null != mPlayThread)
                     mPlayThread.setChannel(false, true);
