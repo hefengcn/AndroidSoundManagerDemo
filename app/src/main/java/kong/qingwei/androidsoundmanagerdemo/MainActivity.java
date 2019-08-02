@@ -58,13 +58,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onReceive(Context context, Intent intent) {
             long extra = intent.getIntExtra("positionvalue", -1);
-            Log.d(TAG, "extra = " + extra);//
-            if (extra < 100){
+            Log.d(TAG, "extra = " + extra);
+            Log.d(TAG, "mBalance.getMax() = " + mBalance.getMax());
+            int max = mBalance.getMax();
+            if (extra < 20) {
                 if (null != mPlayThread)
                     mPlayThread.setChannel(true, false);
                 mBalance.setProgress(mBalance.getMax());
-            }
-            if (extra > 200){
+            } else if (extra < 400) {
+                if (null != mPlayThread)
+                    mPlayThread.setBalance(max, (400 - (int) extra) / 4);
+                mBalance.setProgress((400 - (int) extra) / 4);
+            } else {
                 if (null != mPlayThread)
                     mPlayThread.setChannel(false, true);
                 mBalance.setProgress(0);
@@ -145,6 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         int max = seekBar.getMax();
+        Log.d(TAG, "max = " + max);
         if (null != mPlayThread)
             mPlayThread.setBalance(max, progress);
     }
