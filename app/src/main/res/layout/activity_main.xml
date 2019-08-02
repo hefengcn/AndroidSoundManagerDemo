@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="kong.qingwei.androidsoundmanagerdemo.MainActivity">
+    tools:context="com.lenovo.audiodemo.MainActivity">
 
     <TextView
         android:id="@+id/tip1"
@@ -103,6 +103,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="禁用右声道" />
+
+        <Button
+            android:id="@+id/face_control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="跟随人脸" />
     </LinearLayout>
 
     <Button
@@ -111,14 +118,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/ll_channel"
         android:text="恢复双声道" />
-
-    <Button
-        android:id="@+id/send_diff_data"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/channel_default"
-        android:layout_marginTop="50dp"
-        android:text="左右声道发送不同的音频数据" />
 
 
 </RelativeLayout>
