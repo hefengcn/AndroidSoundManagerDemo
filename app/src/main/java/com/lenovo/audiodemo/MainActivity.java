@@ -143,15 +143,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        int max = seekBar.getMax();
-        Log.d(TAG, "max = " + max);
+
     }
 
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
 
     }
-
 
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
